@@ -1,0 +1,345 @@
+/* Estilos Generales */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: #A0C878;
+}
+
+/* Contenedor Principal */
+/* .contenedor {
+    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "nav nav nav"
+        "header header header"
+        "estudios estudios estudios"
+        "aside aside aside"
+        "experiencias experiencias experiencias"
+        "contacto contacto contacto"
+        "footer footer footer";
+} */
+
+.contenedor {
+    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr; /* en lugar de 3 columnas fijas */
+    grid-template-areas:
+        "nav"
+        "header"
+        "estudios"
+        "aside"
+        "experiencias"
+        "contacto"
+        "footer";
+}
+
+
+/* Estilos de Navegación */
+nav {
+    width: 100%;
+    grid-area: nav;
+    position: fixed;
+    text-align: center;
+    background-color: #FAF6E9;
+}
+
+ul {
+    width: 100%;
+}
+
+li {
+    display: inline-block;
+    margin: 30px 40px 30px 0; /* margen superior, derecho, inferior, izquierdo */
+}
+
+a {
+    text-decoration: none;
+    color: #A0C878;
+    font-weight: bolder;
+}
+
+/* Estilos de Encabezado */
+header {
+    grid-area: header;
+    height: 740px;
+}
+
+.titulo {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 220px;
+    color: #FAF6E9;
+}
+
+.titulo h1 {
+    margin-bottom: 35px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    margin: 40px 0 0 40px; /* margen superior, derecho, inferior, izquierdo */
+}
+
+/* Estilos de Sección de Estudios */
+.estudios {
+    grid-area: estudios;
+    margin-bottom: 10%;
+}
+
+.estudios-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 6%;
+}
+
+.article1, .article2 {
+    width: 48%;
+    background-color: #FAF6E9;
+    text-align: center;
+    border-radius: 1%;
+}
+
+.article1 h2, .article2 h2 {
+    margin: 20px 0; /* margen superior e inferior */
+}
+
+.img1, .img2 {
+    width: 150px;
+    height: auto;
+    margin-top: 4%;
+}
+
+.article1 p, .article2 p {
+    margin: 35px;
+}
+
+/* Estilos de Aside */
+aside {
+    grid-area: aside;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: #FAF6E9;
+    padding: 20px;
+    border-radius: 1%;
+}
+
+aside h2 {
+    color: #A0C878;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 4%;
+}
+
+aside .me_descripcion{
+    margin: 40px;
+}
+
+/* Estilos de Sección de Experiencias */
+.exp {
+    grid-area: experiencias;
+}
+
+.exp h2{
+    text-align: center;
+    margin-top: 10%;
+    color: #FAF6E9;
+}
+
+.experiencias-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.article3, .article4 {
+    width: 48%;
+    background-color: #FAF6E9;
+    text-align: center;
+    border-radius: 1%;
+}
+
+.article3 h2, .article4 h2 {
+    margin: 20px 0;
+    color: #A0C878;
+}
+
+.article3 p, .article4 p {
+    margin: 40px;
+}
+
+/* Estilos de Sección de Contacto */
+.contact {
+    grid-area: contacto;
+    margin-top: 6%;
+}
+
+.contact h2{
+    text-align: center;
+    margin-top: 10%;
+    color: #FAF6E9;
+}
+
+.contacto-container {
+    margin-top: 3%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #FAF6E9;
+    padding: 20px;
+    border-radius: 1%;
+}
+
+.contact .contactos{
+    padding: 10px;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin-top: 30px;
+}
+
+.social-icons a {
+    color: #A0C878;
+    font-size: 34px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #FAF6E9;
+}
+
+
+/* Estilos de Footer */
+footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Estilos de Media */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    li {
+        display: block;
+        margin: 15px 0;
+    }
+
+    header {
+        height: auto;
+        padding-top: 120px;
+    }
+
+    .titulo {
+        margin-top: 60px;
+        font-size: 20px;
+    }
+
+    .logo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .estudios-container,
+    .experiencias-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .article1, .article2,
+    .article3, .article4 {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    aside {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .contacto-container {
+        margin: 5%;
+    }
+
+    .social-icons {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Botón hamburguesa */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #A0C878;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* Responsive para pantallas chicas */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #FAF6E9;
+        padding: 1px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .estudios-container,
+    .experiencias-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .article1, .article2, .article3, .article4 {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    aside, .contacto-container {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .social-icons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-items: center;
+    }
+}
